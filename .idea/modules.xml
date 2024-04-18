@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Analisis y Organizacion de Informacion/Analisis y Organizacion de Informacion.iml" filepath="$PROJECT_DIR$/Analisis y Organizacion de Informacion/Analisis y Organizacion de Informacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Caso-Final-Entregador-6.iml" filepath="$PROJECT_DIR$/.idea/Caso-Final-Entregador-6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gestion de datos dinamicos/Gestion de datos dinamicos.iml" filepath="$PROJECT_DIR$/Gestion de datos dinamicos/Gestion de datos dinamicos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Indexacion y Visualizacion de Archivos/Indexacion y Visualizacion de Archivos.iml" filepath="$PROJECT_DIR$/Indexacion y Visualizacion de Archivos/Indexacion y Visualizacion de Archivos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mapas y Asociacion de Datos/Mapas y Asociacion de Datos.iml" filepath="$PROJECT_DIR$/Mapas y Asociacion de Datos/Mapas y Asociacion de Datos.iml" />
+    </modules>
+  </component>
+</project>
