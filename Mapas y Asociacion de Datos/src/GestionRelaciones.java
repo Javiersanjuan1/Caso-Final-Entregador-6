@@ -5,10 +5,7 @@ import java.util.Map;
 
 public class GestionRelaciones {
     public static void main(String[] args) {
-        // Crear el panel de pestañas
         JTabbedPane tabbedPane = new JTabbedPane();
-
-        // Crear paneles para cada opción y agregarlos al panel de pestañas
         JPanel gestionDatosPanel = new JPanel();
         gestionDatosPanel.add(new JLabel("Contenido de Gestión de Datos"));
         tabbedPane.addTab("Gestión de Datos", gestionDatosPanel);
