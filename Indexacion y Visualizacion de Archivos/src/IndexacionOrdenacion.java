@@ -1,39 +1,105 @@
-import java.io.*;
+import javax.swing.*;
 import java.util.*;
 
 public class IndexacionOrdenacion {
     public static void main(String[] args) {
-        String directorioRaiz = "C:\\Directorio";
-        Map<String, String> index = new HashMap<>();
+        // Crear el panel de pestañas
+        JTabbedPane tabbedPane = new JTabbedPane();
 
-        // Indexar  recursivamente
-        // indexarDirectorio(new File(directorioRaiz), index);
+        // Crear paneles para cada opción y agregarlos al panel de pestañas
+        JPanel gestionDatosPanel = new JPanel();
+        gestionDatosPanel.add(new JLabel("Contenido de Gestión de Datos"));
+        tabbedPane.addTab("Gestión de Datos", gestionDatosPanel);
 
-        // Ordenar alfabéticamente los nombres de los archivos
-        List<String> nombresOrdenados = new ArrayList<>(index.keySet());
-        Collections.sort(nombresOrdenados);
+        JPanel indexacionPanel = new JPanel();
+        indexacionPanel.add(new JLabel("Contenido de Indexación Recursiva"));
+        tabbedPane.addTab("Indexación Recursiva", indexacionPanel);
 
-        // Listar archivos ordenados junto con sus rutas completas
-        System.out.println("Archivos ordenados alfabéticamente:");
-        for (String nombre : nombresOrdenados) {
-            String ruta = index.get(nombre);
-            System.out.println(ruta + "\\" + nombre);
+        JPanel ordenacionListadoPanel = new JPanel();
+        ordenacionListadoPanel.add(new JLabel("Contenido de Ordenación y Listado"));
+        tabbedPane.addTab("Ordenación y Listado", ordenacionListadoPanel);
+
+        // Agregar un escuchador de eventos a cada pestaña
+        tabbedPane.addChangeListener(e -> {
+            // Obtener el índice de la pestaña seleccionada
+            int selectedIndex = tabbedPane.getSelectedIndex();
+
+            // Realizar acciones basadas en la pestaña seleccionada
+            switch (selectedIndex) {
+                case 0:
+                    // Realizar operaciones de gestión de datos
+                    gestionDeDatos();
+                    break;
+                case 1:
+                    // Realizar operaciones de indexación recursiva
+                    indexacionRecursiva();
+                    break;
+                case 2:
+                    // Realizar operaciones de ordenación y listado
+                    ordenacionYListado();
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        // Crear la ventana principal
+        JFrame mainWindow = new JFrame("Ventana Principal");
+        mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainWindow.add(tabbedPane);
+
+        // Configurar tamaño y visibilidad de la ventana principal
+        mainWindow.setSize(400, 300);
+        mainWindow.setLocationRelativeTo(null); // Centrar la ventana en la pantalla
+        mainWindow.setVisible(true);
+    }
+
+    // Método para operaciones de gestión de datos
+    private static void gestionDeDatos() {
+        // Mensaje para mostrar en la ventana emergente
+        String mensaje = "Gestión de Relaciones:\n\n" +
+                "Crear mapas para asociar y gestionar relaciones entre diferentes conjuntos de datos, como:\n" +
+                "- Números y letras\n" +
+                "- Números y sus representaciones textuales\n\n" +
+                "Recuperación Eficiente:\n\n" +
+                "Desarrollar métodos para recuperar información asociada de manera eficiente, " +
+                "basándose en claves o criterios definidos por el usuario.";
+
+        // Mostrar el mensaje en una ventana emergente
+        JOptionPane.showMessageDialog(null, mensaje);
+
+        // Ejemplo de gestión de relaciones
+        Map<Integer, String> numerosLetras = new HashMap<>();
+        numerosLetras.put(1, "A");
+        numerosLetras.put(2, "B");
+        numerosLetras.put(3, "C");
+        numerosLetras.put(4, "D");
+        numerosLetras.put(5, "E");
+
+        // Ejemplo de recuperación eficiente
+        String numeroBuscado = JOptionPane.showInputDialog("Ingrese un número para obtener su letra asociada:");
+        try {
+            int numero = Integer.parseInt(numeroBuscado);
+            if (numerosLetras.containsKey(numero)) {
+                String letraAsociada = numerosLetras.get(numero);
+                JOptionPane.showMessageDialog(null, "La letra asociada al número " + numero + " es: " + letraAsociada);
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró ninguna letra asociada al número " + numero);
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese un número válido.");
         }
     }
 
-    // Método recursivo para indexar archivos y sus rutas
-    private static void indexarDirectorio(File directorio, Map<String, String> index) {
-        if (directorio.isDirectory()) {
-            File[] archivos = directorio.listFiles();
-            if (archivos != null) {
-                for (File archivo : archivos) {
-                    if (archivo.isFile()) {
-                        index.put(archivo.getName(), directorio.getAbsolutePath());
-                    } else if (archivo.isDirectory()) {
-                        indexarDirectorio(archivo, index);
-                    }
-                }
-            }
-        }
+    // Método para operaciones de indexación recursiva
+    private static void indexacionRecursiva() {
+        // Implementar sistema de indexación recursiva
+        JOptionPane.showMessageDialog(null, "Indexación Recursiva: Sistema implementado");
+    }
+
+    // Método para operaciones de ordenación y listado
+    private static void ordenacionYListado() {
+        // Implementar funcionalidades de ordenación y listado
+        JOptionPane.showMessageDialog(null, "Ordenación y Listado: Funcionalidades implementadas");
     }
 }

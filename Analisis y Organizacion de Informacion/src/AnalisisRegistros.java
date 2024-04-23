@@ -1,66 +1,94 @@
+import javax.swing.*;
 import java.util.*;
 
-// Clase para representar una transacción de venta
-class Transaction {
-    private String productName;
-    private double amount;
+class Venta {
+    private String fecha;
+    private double monto;
+    private String cliente;
 
-    public Transaction(String productName, double amount) {
-        this.productName = productName;
-        this.amount = amount;
+    public Venta(String fecha, double monto, String cliente) {
+        this.fecha = fecha;
+        this.monto = monto;
+        this.cliente = cliente;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getFecha() {
+        return fecha;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getMonto() {
+        return monto;
+    }
+
+    public String getCliente() {
+        return cliente;
     }
 
     @Override
     public String toString() {
-        return "Transaction{" +
-                "productName='" + productName + '\'' +
-                ", amount=" + amount +
+        return "Venta{" +
+                "fecha='" + fecha + '\'' +
+                ", monto=" + monto +
+                ", cliente='" + cliente + '\'' +
                 '}';
     }
 }
 
-public class Anali
+public class AnalisisRegistros {
     public static void main(String[] args) {
-        // Lista de transacciones de venta
-        List<Transaction> transactions = new ArrayList<>();
-        transactions.add(new Transaction("Producto A", 100.0));
-        transactions.add(new Transaction("Producto B", 50.0));
-        transactions.add(new Transaction("Producto C", 75.0));
 
-        // Ordenar las transacciones por nombre del producto utilizando TreeSet
-        TreeSet<Transaction> sortedTransactionsByName = new TreeSet<>(Comparator.comparing(Transaction::getProductName));
-        sortedTransactionsByName.addAll(transactions);
+        Set<String> nombres = new TreeSet<>();
+        nombres.add("Juan");
+        nombres.add("María");
+        nombres.add("Carlos");
+        nombres.add("Ana");
+        nombres.add("Pedro");
 
-        System.out.println("Transacciones ordenadas por nombre del producto:");
-        for (Transaction transaction : sortedTransactionsByName) {
-            System.out.println(transaction);
+
+        StringBuilder nombresOrdenados = new StringBuilder("Nombres ordenados:\n");
+        for (String nombre : nombres) {
+            nombresOrdenados.append(nombre).append("\n");
         }
+        JOptionPane.showMessageDialog(null, nombresOrdenados.toString());
 
-        // Ordenar las transacciones por monto utilizando Collections.sort
-        Collections.sort(transactions, Comparator.comparing(Transaction::getAmount));
 
-        System.out.println("\nTransacciones ordenadas por monto:");
-        for (Transaction transaction : transactions) {
-            System.out.println(transaction);
+        List<Venta> ventas = new ArrayList<>();
+        ventas.add(new Venta("2024-04-22", 100.50, "Cliente A"));
+        ventas.add(new Venta("2024-04-23", 200.75, "Cliente B"));
+        ventas.add(new Venta("2024-04-24", 150.25, "Cliente C"));
+        ventas.add(new Venta("2024-04-25", 300.20, "Cliente D"));
+        ventas.add(new Venta("2024-04-26", 250.30, "Cliente E"));
+
+
+        Collections.sort(ventas, Comparator.comparingDouble(Venta::getMonto));
+
+
+        StringBuilder ventasOrdenadas = new StringBuilder("Ventas ordenadas por monto:\n");
+        for (Venta venta : ventas) {
+            ventasOrdenadas.append(venta).append("\n");
         }
+        JOptionPane.showMessageDialog(null, ventasOrdenadas.toString());
 
-        // Búsqueda de una transacción por nombre del producto utilizando binarySearch
-        String productNameToSearch = "Producto B";
-        Transaction searchKey = new Transaction(productNameToSearch, 0);
-        int index = Collections.binarySearch(transactions, searchKey, Comparator.comparing(Transaction::getProductName));
 
-        if (index >= 0) {
-            System.out.println("\nTransacción encontrada: " + transactions.get(index));
-        } else {
-            System.out.println("\nTransacción no encontrada para el producto: " + productNameToSearch);
+        String fechaBusqueda = "2024-04-24";
+        List<Venta> ventasFiltradas = filtrarVentasPorFecha(ventas, fechaBusqueda);
+
+        // Mostrar ventas filtradas por fecha en ventana emergente
+        StringBuilder ventasFiltradasString = new StringBuilder("Ventas filtradas por fecha " + fechaBusqueda + ":\n");
+        for (Venta venta : ventasFiltradas) {
+            ventasFiltradasString.append(venta).append("\n");
         }
+        JOptionPane.showMessageDialog(null, ventasFiltradasString.toString());
+    }
+
+    // Método para filtrar ventas por fecha
+    public static List<Venta> filtrarVentasPorFecha(List<Venta> ventas, String fecha) {
+        List<Venta> ventasFiltradas = new ArrayList<>();
+        for (Venta venta : ventas) {
+            if (venta.getFecha().equals(fecha)) {
+                ventasFiltradas.add(venta);
+            }
+        }
+        return ventasFiltradas;
     }
 }
