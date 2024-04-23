@@ -73,7 +73,6 @@ public class AnalisisRegistros {
         String fechaBusqueda = "2024-04-24";
         List<Venta> ventasFiltradas = filtrarVentasPorFecha(ventas, fechaBusqueda);
 
-        // Mostrar ventas filtradas por fecha en ventana emergente
         StringBuilder ventasFiltradasString = new StringBuilder("Ventas filtradas por fecha " + fechaBusqueda + ":\n");
         for (Venta venta : ventasFiltradas) {
             ventasFiltradasString.append(venta).append("\n");
@@ -81,7 +80,6 @@ public class AnalisisRegistros {
         JOptionPane.showMessageDialog(null, ventasFiltradasString.toString());
     }
 
-    // Método para filtrar ventas por fecha
     public static List<Venta> filtrarVentasPorFecha(List<Venta> ventas, String fecha) {
         List<Venta> ventasFiltradas = new ArrayList<>();
         for (Venta venta : ventas) {

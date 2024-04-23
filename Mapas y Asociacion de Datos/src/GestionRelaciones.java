@@ -105,7 +105,6 @@ public class GestionRelaciones {
 
         JOptionPane.showMessageDialog(null, mensaje);
 
-        // Ejemplo de panel de control
         JOptionPane.showMessageDialog(null, "Panel de Control: Configuración guardada.");
     }
 }
