@@ -3,10 +3,10 @@ import java.util.*;
 
 public class IndexacionOrdenacion {
     public static void main(String[] args) {
-        // Crear el panel de pestañas
+
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        // Crear paneles para cada opción y agregarlos al panel de pestañas
+
         JPanel gestionDatosPanel = new JPanel();
         gestionDatosPanel.add(new JLabel("Contenido de Gestión de Datos"));
         tabbedPane.addTab("Gestión de Datos", gestionDatosPanel);
@@ -19,23 +19,18 @@ public class IndexacionOrdenacion {
         ordenacionListadoPanel.add(new JLabel("Contenido de Ordenación y Listado"));
         tabbedPane.addTab("Ordenación y Listado", ordenacionListadoPanel);
 
-        // Agregar un escuchador de eventos a cada pestaña
+
         tabbedPane.addChangeListener(e -> {
-            // Obtener el índice de la pestaña seleccionada
             int selectedIndex = tabbedPane.getSelectedIndex();
 
-            // Realizar acciones basadas en la pestaña seleccionada
             switch (selectedIndex) {
                 case 0:
-                    // Realizar operaciones de gestión de datos
                     gestionDeDatos();
                     break;
                 case 1:
-                    // Realizar operaciones de indexación recursiva
                     indexacionRecursiva();
                     break;
                 case 2:
-                    // Realizar operaciones de ordenación y listado
                     ordenacionYListado();
                     break;
                 default:
@@ -43,7 +38,6 @@ public class IndexacionOrdenacion {
             }
         });
 
-        // Crear la ventana principal
         JFrame mainWindow = new JFrame("Ventana Principal");
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainWindow.add(tabbedPane);
