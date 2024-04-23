@@ -18,23 +18,17 @@ public class GestionRelaciones {
         panelControlPanel.add(new JLabel("Contenido de Panel de Control"));
         tabbedPane.addTab("Panel de Control", panelControlPanel);
 
-        // Agregar un escuchador de eventos a cada pestaña
         tabbedPane.addChangeListener(e -> {
-            // Obtener el índice de la pestaña seleccionada
             int selectedIndex = tabbedPane.getSelectedIndex();
 
-            // Realizar acciones basadas en la pestaña seleccionada
             switch (selectedIndex) {
                 case 0:
-                    // Realizar operaciones de gestión de datos
                     gestionDeDatos();
                     break;
                 case 1:
-                    // Realizar operaciones de control de usuarios
                     controlDeUsuarios();
                     break;
                 case 2:
-                    // Realizar operaciones de panel de control
                     panelDeControl();
                     break;
                 default:
@@ -42,7 +36,6 @@ public class GestionRelaciones {
             }
         });
 
-        // Crear la ventana principal
         JFrame mainWindow = new JFrame("Ventana Principal");
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainWindow.add(tabbedPane);
