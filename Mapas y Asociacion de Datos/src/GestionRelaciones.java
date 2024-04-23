@@ -88,14 +88,11 @@ public class GestionRelaciones {
 
         JOptionPane.showMessageDialog(null, mensaje);
 
-        // Ejemplo de control de usuarios
         String nuevoUsuario = JOptionPane.showInputDialog("Ingrese el nombre del nuevo usuario:");
         JOptionPane.showMessageDialog(null, "Usuario '" + nuevoUsuario + "' creado con éxito.");
     }
 
-    // Método para operaciones de panel de control
     private static void panelDeControl() {
-        // Mensaje para mostrar en la ventana emergente
         String mensaje = "Panel de Control:\n\n" +
                 "Desarrollar un panel de control para configurar y gestionar la aplicación, " +
                 "incluyendo:\n" +
@@ -106,7 +103,6 @@ public class GestionRelaciones {
                 "Implementar medidas de seguridad y privacidad para proteger los datos y " +
                 "garantizar el acceso autorizado a la información.";
 
-        // Mostrar el mensaje en una ventana emergente
         JOptionPane.showMessageDialog(null, mensaje);
 
         // Ejemplo de panel de control
