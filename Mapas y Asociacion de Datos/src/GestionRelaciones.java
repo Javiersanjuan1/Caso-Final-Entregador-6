@@ -40,15 +40,12 @@ public class GestionRelaciones {
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainWindow.add(tabbedPane);
 
-        // Configurar tamaño y visibilidad de la ventana principal
         mainWindow.setSize(400, 300);
         mainWindow.setLocationRelativeTo(null); // Centrar la ventana en la pantalla
         mainWindow.setVisible(true);
     }
 
-    // Método para operaciones de gestión de datos
     private static void gestionDeDatos() {
-        // Mensaje para mostrar en la ventana emergente
         String mensaje = "Gestión de Relaciones:\n\n" +
                 "Crear mapas para asociar y gestionar relaciones entre diferentes conjuntos de datos, como:\n" +
                 "- Números y letras\n" +
@@ -57,10 +54,8 @@ public class GestionRelaciones {
                 "Desarrollar métodos para recuperar información asociada de manera eficiente, " +
                 "basándose en claves o criterios definidos por el usuario.";
 
-        // Mostrar el mensaje en una ventana emergente
         JOptionPane.showMessageDialog(null, mensaje);
 
-        // Ejemplo de gestión de relaciones
         Map<Integer, String> numerosLetras = new HashMap<>();
         numerosLetras.put(1, "A");
         numerosLetras.put(2, "B");
@@ -68,7 +63,6 @@ public class GestionRelaciones {
         numerosLetras.put(4, "D");
         numerosLetras.put(5, "E");
 
-        // Ejemplo de recuperación eficiente
         String numeroBuscado = JOptionPane.showInputDialog("Ingrese un número para obtener su letra asociada:");
         try {
             int numero = Integer.parseInt(numeroBuscado);
@@ -83,9 +77,7 @@ public class GestionRelaciones {
         }
     }
 
-    // Método para operaciones de control de usuarios
     private static void controlDeUsuarios() {
-        // Mensaje para mostrar en la ventana emergente
         String mensaje = "Control de Usuarios:\n\n" +
                 "Desarrollar métodos para gestionar usuarios, incluyendo:\n" +
                 "- Creación de usuarios\n" +
@@ -94,7 +86,6 @@ public class GestionRelaciones {
                 "Interactividad de Usuario:\n\n" +
                 "Implementar interfaces de usuario intuitivas y amigables para facilitar la interacción del usuario con la aplicación.";
 
-        // Mostrar el mensaje en una ventana emergente
         JOptionPane.showMessageDialog(null, mensaje);
 
         // Ejemplo de control de usuarios
