@@ -3,14 +3,11 @@ import java.util.*;
 
 public class IndexacionOrdenacion {
     public static void main(String[] args) {
-        // Ruta del directorio a indexar
         String directorioRaiz = "C:\\Directorio";
-
-        // Crear un mapa para almacenar nombres de archivos y rutas
         Map<String, String> index = new HashMap<>();
 
-        // Indexar archivos recursivamente
-        indexarDirectorio(new File(directorioRaiz), index);
+        // Indexar  recursivamente
+        // indexarDirectorio(new File(directorioRaiz), index);
 
         // Ordenar alfabéticamente los nombres de los archivos
         List<String> nombresOrdenados = new ArrayList<>(index.keySet());
