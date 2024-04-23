@@ -42,15 +42,12 @@ public class IndexacionOrdenacion {
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainWindow.add(tabbedPane);
 
-        // Configurar tamaño y visibilidad de la ventana principal
         mainWindow.setSize(400, 300);
         mainWindow.setLocationRelativeTo(null); // Centrar la ventana en la pantalla
         mainWindow.setVisible(true);
     }
 
-    // Método para operaciones de gestión de datos
     private static void gestionDeDatos() {
-        // Mensaje para mostrar en la ventana emergente
         String mensaje = "Gestión de Relaciones:\n\n" +
                 "Crear mapas para asociar y gestionar relaciones entre diferentes conjuntos de datos, como:\n" +
                 "- Números y letras\n" +
@@ -59,10 +56,8 @@ public class IndexacionOrdenacion {
                 "Desarrollar métodos para recuperar información asociada de manera eficiente, " +
                 "basándose en claves o criterios definidos por el usuario.";
 
-        // Mostrar el mensaje en una ventana emergente
         JOptionPane.showMessageDialog(null, mensaje);
 
-        // Ejemplo de gestión de relaciones
         Map<Integer, String> numerosLetras = new HashMap<>();
         numerosLetras.put(1, "A");
         numerosLetras.put(2, "B");
@@ -70,7 +65,6 @@ public class IndexacionOrdenacion {
         numerosLetras.put(4, "D");
         numerosLetras.put(5, "E");
 
-        // Ejemplo de recuperación eficiente
         String numeroBuscado = JOptionPane.showInputDialog("Ingrese un número para obtener su letra asociada:");
         try {
             int numero = Integer.parseInt(numeroBuscado);
@@ -85,15 +79,11 @@ public class IndexacionOrdenacion {
         }
     }
 
-    // Método para operaciones de indexación recursiva
     private static void indexacionRecursiva() {
-        // Implementar sistema de indexación recursiva
         JOptionPane.showMessageDialog(null, "Indexación Recursiva: Sistema implementado");
     }
 
-    // Método para operaciones de ordenación y listado
     private static void ordenacionYListado() {
-        // Implementar funcionalidades de ordenación y listado
         JOptionPane.showMessageDialog(null, "Ordenación y Listado: Funcionalidades implementadas");
     }
 }
